@@ -10,7 +10,7 @@ class TermController extends Controller
 {
     public function index(): View
     {
-        $terms = Term::get();
+        $terms = Term::latest()->get();
         return view('index', compact('terms'));
     }
 
@@ -22,6 +22,11 @@ class TermController extends Controller
 
         ]);
         Term::create($attribute);
+        return redirect('/');
+    }
+
+    public function destroy(Term $term){
+        $term->delete();
         return redirect('/');
     }
 }
