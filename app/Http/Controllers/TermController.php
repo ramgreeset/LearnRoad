@@ -24,4 +24,9 @@ class TermController extends Controller
         Term::create($attribute);
         return redirect('/');
     }
+
+    public function destroy(Term $term){
+        $term->delete();
+        return redirect('/');
+    }
 }
