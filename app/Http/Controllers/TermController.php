@@ -10,7 +10,7 @@ class TermController extends Controller
 {
     public function index(): View
     {
-        $terms = Term::get();
+        $terms = Term::latest()->get();
         return view('index', compact('terms'));
     }
 

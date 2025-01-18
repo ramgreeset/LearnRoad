@@ -7,7 +7,7 @@
 </head>
 <body class="h-screen flex flex-col">
 <x-header/>
-<main class="flex-grow container">
+<main class="flex-grow container mt-14">
     {{ $slot }}
 </main>
 <x-footer/>
