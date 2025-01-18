@@ -1,0 +1,4 @@
+
+<div>{{ $term->title }}</div>
+
+
