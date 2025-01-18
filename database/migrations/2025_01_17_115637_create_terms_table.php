@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('terms', function (Blueprint $table) {
             $table->id();
-            $table->integer('terms_id')->autoIncrement();
             $table->string('title');
             $table->string('description')->nullable();
             $table->string('links')->nullable();
