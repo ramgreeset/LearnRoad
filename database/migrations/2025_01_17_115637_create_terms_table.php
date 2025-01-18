@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('links')->nullable();
             $table->integer('grade')->default(1);
             $table->string('tag')->nullable();
-            $table->integer('repeat_counter')->default(1);
+            $table->integer('repeat_counter')->default(0);
             $table->timestamps();
         });
     }
