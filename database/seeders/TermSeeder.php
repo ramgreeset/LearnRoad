@@ -11,6 +11,6 @@ class TermSeeder extends Seeder
     public function run(): void
     {
         Term::truncate();
-        Term::factory(10)->create();
+//        Term::factory()->create();
     }
 }
