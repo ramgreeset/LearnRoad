@@ -13,13 +13,6 @@ return new class extends Migration
     {
         Schema::create('terms', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->integer('term_id');
-            $table->string('description')->nullable();
-            $table->string('links')->nullable();
-            $table->integer('grade')->default(1);
-            $table->string('tag')->nullable();
-            $table->integer('repeat_counter')->default(0);
             $table->timestamps();
         });
     }
