@@ -29,7 +29,7 @@ class ProfileController extends Controller
     public function destroy(Profile $profile){
         $profile->delete();
         return response()->json([
-            'Сообщение' => 'Удалено',
+            'message' => "Запись с ID {$profile->id} удалена",
         ], Response::HTTP_OK);
     }
 }

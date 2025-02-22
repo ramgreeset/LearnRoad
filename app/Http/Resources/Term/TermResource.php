@@ -12,6 +12,7 @@ class TermResource extends JsonResource
         return [
             'term_title' => $this->term_title,
             'term_description' => $this->term_description,
+            'repetition_rate' => $this->repetition_rate,
         ];
     }
 }

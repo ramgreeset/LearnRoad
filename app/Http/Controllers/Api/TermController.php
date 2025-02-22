@@ -14,20 +14,21 @@ class TermController extends Controller
     public function index(){
         return TermResource::collection(Term::all())->resolve();
     }
-    public function show(Term $profile){
-        return TermResource::make($profile);
+    public function show(Term $term){
+        $term->increment('repetition_rate');
+        return TermResource::make($term);
     }
     public function store(StoreRequest $request){
         $data = $request->validated();
         Term::create($data);
     }
-    public function update(UpdateRequest $request, Term $profile){
+    public function update(UpdateRequest $request, Term $term){
         $data = $request->validated();
-        $profile->update($data);
+        $term->update($data);
         return 'Прошло заебись';
     }
-    public function destroy(Term $profile){
-        $profile->delete();
+    public function destroy(Term $term){
+        $term->delete();
         return response()->json([
             'Сообщение' => 'Удалено',
         ], Response::HTTP_OK);

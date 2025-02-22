@@ -13,20 +13,20 @@ class FolderController extends Controller
     public function index(){
         return FolderResource::collection(Folder::all())->resolve();
     }
-    public function show(Folder $profile){
-        return FolderResource::make($profile);
+    public function show(Folder $folder){
+        return FolderResource::make($folder);
     }
     public function store(StoreRequest $request){
         $data = $request->validated();
         Folder::create($data);
     }
-    public function update(UpdateRequest $request, Folder $profile){
+    public function update(UpdateRequest $request, Folder $folder){
         $data = $request->validated();
-        $profile->update($data);
+        $folder->update($data);
         return 'Прошло заебись';
     }
-    public function destroy(Folder $profile){
-        $profile->delete();
+    public function destroy(Folder $folder){
+        $folder->delete();
         return response()->json([
             'Сообщение' => 'Удалено',
         ], Response::HTTP_OK);

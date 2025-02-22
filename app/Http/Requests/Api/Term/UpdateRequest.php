@@ -11,6 +11,7 @@ class UpdateRequest extends FormRequest
         return [
             'term_title' => 'required|string',
             'term_description' => 'required|string',
+            'repetition_rate' => 'required|integer',
         ];
     }
 }

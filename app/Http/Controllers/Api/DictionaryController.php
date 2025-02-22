@@ -14,20 +14,20 @@ class DictionaryController extends Controller
     public function index(){
         return DictionaryResource::collection(Dictionary::all())->resolve();
     }
-    public function show(Dictionary $profile){
-        return DictionaryResource::make($profile);
+    public function show(Dictionary $dictionary){
+        return DictionaryResource::make($dictionary);
     }
     public function store(StoreRequest $request){
         $data = $request->validated();
         Dictionary::create($data);
     }
-    public function update(UpdateRequest $request, Dictionary $profile){
+    public function update(UpdateRequest $request, Dictionary $dictionary){
         $data = $request->validated();
-        $profile->update($data);
+        $dictionary->update($data);
         return 'Прошло заебись';
     }
-    public function destroy(Dictionary $profile){
-        $profile->delete();
+    public function destroy(Dictionary $dictionary){
+        $dictionary->delete();
         return response()->json([
             'Сообщение' => 'Удалено',
         ], Response::HTTP_OK);

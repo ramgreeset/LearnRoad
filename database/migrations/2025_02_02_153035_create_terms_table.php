@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('term_title');
             $table->string('term_description');
+            $table->smallInteger('repetition_rate');
             $table->timestamps();
         });
     }
