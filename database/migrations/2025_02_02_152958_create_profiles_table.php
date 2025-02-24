@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->string('first_name');
+//            $table->foreignId('user_id')->index()->constrained('users');
             $table->timestamps();
         });
     }

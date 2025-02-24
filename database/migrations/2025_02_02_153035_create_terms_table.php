@@ -14,8 +14,12 @@ return new class extends Migration
         Schema::create('terms', function (Blueprint $table) {
             $table->id();
             $table->string('term_title');
-            $table->string('term_description');
-            $table->smallInteger('repetition_rate');
+            $table->string('term_description')->nullable();
+            $table->string('term_hint')->nullable();
+            $table->string('term_link')->nullable()->default(null);
+            $table->smallInteger('repetition_rate')->default(0);
+            $table->foreignId('dictionary_id')->constrained('dictionaries');
+
             $table->timestamps();
         });
     }

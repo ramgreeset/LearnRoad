@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('dictionaries', function (Blueprint $table) {
             $table->id();
             $table->string('dictionary_title');
+            $table->foreignId('folder_id')->constrained('folders');
             $table->timestamps();
         });
     }

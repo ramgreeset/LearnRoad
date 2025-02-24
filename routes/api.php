@@ -15,3 +15,4 @@ Route::apiResource('profiles', ProfileController::class);
 Route::apiResource('folders', FolderController::class);
 Route::apiResource('dictionaries', DictionaryController::class);
 Route::apiResource('terms', TermController::class);
+

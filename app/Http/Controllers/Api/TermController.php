@@ -18,6 +18,10 @@ class TermController extends Controller
         $term->increment('repetition_rate');
         return TermResource::make($term);
     }
+    public function showMultiple(Term $term){
+        return TermResource::make($term);
+    }
+
     public function store(StoreRequest $request){
         $data = $request->validated();
         Term::create($data);
